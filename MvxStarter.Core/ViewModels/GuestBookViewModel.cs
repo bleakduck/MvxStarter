@@ -42,6 +42,7 @@ namespace MvxStarter.Core.ViewModels
         }
 
         private string _firstName;
+        // testimuutoksia, ei väliä
 
         public string FirstName
         {
