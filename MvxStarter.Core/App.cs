@@ -1,8 +1,7 @@
-﻿using MvvmCross.ViewModels;
+﻿using MvvmCross;
+using MvvmCross.ViewModels;
+using MvxStarter.Core.Services;
 using MvxStarter.Core.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MvxStarter.Core
 {
@@ -10,7 +9,10 @@ namespace MvxStarter.Core
     {
         public override void Initialize()
         {
-            RegisterAppStart<GuestBookViewModel>();
+            Mvx.IoCProvider.RegisterType<ICalculationService, CalculationService>();
+            Mvx.IoCProvider.RegisterType<IPropabilityDeterminer, OptimisticPropabilityDeterminer>();
+            RegisterAppStart<TipViewModel>();
+            //RegisterAppStart<GuestBookViewModel>();
         }
     }
 }
